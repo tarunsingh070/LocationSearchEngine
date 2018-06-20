@@ -7,6 +7,9 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 
+/**
+ * This activity displays a view with a world map.
+ */
 public class LocationSearchActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
@@ -15,9 +18,18 @@ public class LocationSearchActivity extends FragmentActivity implements OnMapRea
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location_search);
+
+        setupMapFragment();
+    }
+
+    /**
+     * This method sets up the Map Fragment which will display the world map.
+     */
+    private void setupMapFragment() {
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
+        // Set a callback which will be triggered when the GoogleMap instance is ready to be used.
         mapFragment.getMapAsync(this);
     }
 
@@ -30,6 +42,7 @@ public class LocationSearchActivity extends FragmentActivity implements OnMapRea
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
+        // Set the map instance.
         mMap = googleMap;
     }
 }
