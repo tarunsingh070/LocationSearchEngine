@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">LocationSearchEngine</string>
-    <string name="title_activity_location_search">Search Location</string>
+    <string name="title_activity_location_search">Location Search Engine</string>
+    <string name="error_message">Error occurred while displaying location on the map</string>
 </resources>
